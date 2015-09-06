@@ -3,7 +3,12 @@
 
 target 'InTownApp' do
  pod 'Parse'
-
+ pod  'FBSDKCoreKit'
+ pod 'FBSDKLoginKit'
+ pod 'FBSDKShareKit'
+ pod 'MRProgress'
+ pod 'MRProgress/AFNetworking'
+ 
 end
 
 target 'InTownAppTests' do

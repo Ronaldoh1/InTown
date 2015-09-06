@@ -127,7 +127,6 @@
 		F20D96EE1B9BF4E4007F50D4 = {
 			isa = PBXGroup;
 			children = (
-				F20D97351B9BFCAC007F50D4 /* Images */,
 				F20D96F91B9BF4E4007F50D4 /* InTownApp */,
 				F20D97161B9BF4E5007F50D4 /* InTownAppTests */,
 				F20D96F81B9BF4E4007F50D4 /* Products */,
@@ -148,12 +147,14 @@
 		F20D96F91B9BF4E4007F50D4 /* InTownApp */ = {
 			isa = PBXGroup;
 			children = (
+				F20D97541B9BFF6D007F50D4 /* Welcome */,
 				F20D96FE1B9BF4E4007F50D4 /* AppDelegate.h */,
 				F20D96FF1B9BF4E4007F50D4 /* AppDelegate.m */,
 				F20D97041B9BF4E4007F50D4 /* ViewController.h */,
 				F20D97051B9BF4E4007F50D4 /* ViewController.m */,
 				F20D97071B9BF4E4007F50D4 /* Main.storyboard */,
 				F20D97521B9BFEF1007F50D4 /* LaunchScreen.xib */,
+				F20D97351B9BFCAC007F50D4 /* Images */,
 				F20D97011B9BF4E4007F50D4 /* InTownApp.xcdatamodeld */,
 				F20D96FA1B9BF4E4007F50D4 /* Supporting Files */,
 			);
@@ -197,6 +198,7 @@
 				F20D97361B9BFCB6007F50D4 /* App Icons */,
 			);
 			name = Images;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		F20D97361B9BFCB6007F50D4 /* App Icons */ = {
@@ -260,6 +262,13 @@
 				F20D974E1B9BFDD8007F50D4 /* IntownLogo.png */,
 			);
 			name = Logos;
+			sourceTree = "<group>";
+		};
+		F20D97541B9BFF6D007F50D4 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Welcome;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

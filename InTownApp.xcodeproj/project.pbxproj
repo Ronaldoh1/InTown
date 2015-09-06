@@ -42,6 +42,8 @@
 		F20D975F1B9C05CC007F50D4 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = F20D975E1B9C05CC007F50D4 /* Post.m */; };
 		F20D97621B9C0822007F50D4 /* facebookLoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F20D97601B9C0822007F50D4 /* facebookLoginButton.png */; };
 		F20D97631B9C0822007F50D4 /* twitterLoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F20D97611B9C0822007F50D4 /* twitterLoginButton.png */; };
+		F20D97651B9C0C3D007F50D4 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F20D97641B9C0C3D007F50D4 /* Accounts.framework */; };
+		F20D97671B9C0C45007F50D4 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F20D97661B9C0C45007F50D4 /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		F20D975E1B9C05CC007F50D4 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		F20D97601B9C0822007F50D4 /* facebookLoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookLoginButton.png; sourceTree = "<group>"; };
 		F20D97611B9C0822007F50D4 /* twitterLoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterLoginButton.png; sourceTree = "<group>"; };
+		F20D97641B9C0C3D007F50D4 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		F20D97661B9C0C45007F50D4 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F20D97671B9C0C45007F50D4 /* Social.framework in Frameworks */,
+				F20D97651B9C0C3D007F50D4 /* Accounts.framework in Frameworks */,
 				088EBB71F05BE45CF9842168 /* libPods-InTownApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +131,8 @@
 		302EFAD37B1CEC4106466E2B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F20D97661B9C0C45007F50D4 /* Social.framework */,
+				F20D97641B9C0C3D007F50D4 /* Accounts.framework */,
 				63C4B8AE1B363FD6CADA3288 /* libPods-InTownApp.a */,
 			);
 			name = Frameworks;

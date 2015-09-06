@@ -11,6 +11,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 
+
 @interface AppDelegate ()
 
 @end
@@ -34,6 +35,9 @@
 
     //Initialize facebook
     [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
+
+    [PFTwitterUtils initializeWithConsumerKey:@"JH0IqvcgV49eIjNtuZQuGfSy2"
+                               consumerSecret:@"wcC3vKdTDhamtRHTFzDzUG07JbebkIiMN9mMGbT2HURKQXIVSR"];
 
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];

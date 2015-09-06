@@ -14,7 +14,6 @@
 		F20D97061B9BF4E4007F50D4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F20D97051B9BF4E4007F50D4 /* ViewController.m */; };
 		F20D97091B9BF4E4007F50D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F20D97071B9BF4E4007F50D4 /* Main.storyboard */; };
 		F20D970B1B9BF4E4007F50D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F20D970A1B9BF4E4007F50D4 /* Images.xcassets */; };
-		F20D970E1B9BF4E4007F50D4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F20D970C1B9BF4E4007F50D4 /* LaunchScreen.xib */; };
 		F20D971A1B9BF4E5007F50D4 /* InTownAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F20D97191B9BF4E5007F50D4 /* InTownAppTests.m */; };
 		F20D972C1B9BFCA7007F50D4 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = F20D97231B9BFCA7007F50D4 /* AppIcon29x29.png */; };
 		F20D972D1B9BFCA7007F50D4 /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F20D97241B9BFCA7007F50D4 /* AppIcon29x29@2x.png */; };
@@ -36,6 +35,7 @@
 		F20D974F1B9BFDD8007F50D4 /* cityOnlyLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F20D974C1B9BFDD8007F50D4 /* cityOnlyLogo.png */; };
 		F20D97501B9BFDD8007F50D4 /* defaultImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F20D974D1B9BFDD8007F50D4 /* defaultImage.png */; };
 		F20D97511B9BFDD8007F50D4 /* IntownLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F20D974E1B9BFDD8007F50D4 /* IntownLogo.png */; };
+		F20D97531B9BFEF1007F50D4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F20D97521B9BFEF1007F50D4 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +62,6 @@
 		F20D97051B9BF4E4007F50D4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F20D97081B9BF4E4007F50D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F20D970A1B9BF4E4007F50D4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = InTownApp/Images.xcassets; sourceTree = "<group>"; };
-		F20D970D1B9BF4E4007F50D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F20D97131B9BF4E5007F50D4 /* InTownAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InTownAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F20D97181B9BF4E5007F50D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F20D97191B9BF4E5007F50D4 /* InTownAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InTownAppTests.m; sourceTree = "<group>"; };
@@ -86,6 +85,7 @@
 		F20D974C1B9BFDD8007F50D4 /* cityOnlyLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cityOnlyLogo.png; sourceTree = "<group>"; };
 		F20D974D1B9BFDD8007F50D4 /* defaultImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultImage.png; sourceTree = "<group>"; };
 		F20D974E1B9BFDD8007F50D4 /* IntownLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IntownLogo.png; sourceTree = "<group>"; };
+		F20D97521B9BFEF1007F50D4 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +153,7 @@
 				F20D97041B9BF4E4007F50D4 /* ViewController.h */,
 				F20D97051B9BF4E4007F50D4 /* ViewController.m */,
 				F20D97071B9BF4E4007F50D4 /* Main.storyboard */,
-				F20D970C1B9BF4E4007F50D4 /* LaunchScreen.xib */,
+				F20D97521B9BFEF1007F50D4 /* LaunchScreen.xib */,
 				F20D97011B9BF4E4007F50D4 /* InTownApp.xcdatamodeld */,
 				F20D96FA1B9BF4E4007F50D4 /* Supporting Files */,
 			);
@@ -359,10 +359,10 @@
 				F20D97341B9BFCA7007F50D4 /* AppIcon60x60@3x.png in Resources */,
 				F20D973D1B9BFD19007F50D4 /* blueDot.png in Resources */,
 				F20D97451B9BFD75007F50D4 /* fr.png in Resources */,
+				F20D97531B9BFEF1007F50D4 /* LaunchScreen.xib in Resources */,
 				F20D974F1B9BFDD8007F50D4 /* cityOnlyLogo.png in Resources */,
 				F20D973A1B9BFD0E007F50D4 /* aqua.png in Resources */,
 				F20D97321B9BFCA7007F50D4 /* AppIcon57x57@2x.png in Resources */,
-				F20D970E1B9BF4E4007F50D4 /* LaunchScreen.xib in Resources */,
 				F20D97441B9BFD75007F50D4 /* br.png in Resources */,
 				F20D970B1B9BF4E4007F50D4 /* Images.xcassets in Resources */,
 				F20D974A1B9BFD8D007F50D4 /* splashScreen.png in Resources */,
@@ -449,14 +449,6 @@
 				F20D97081B9BF4E4007F50D4 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		F20D970C1B9BF4E4007F50D4 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F20D970D1B9BF4E4007F50D4 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

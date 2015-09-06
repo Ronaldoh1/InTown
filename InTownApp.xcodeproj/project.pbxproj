@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		088EBB71F05BE45CF9842168 /* libPods-InTownApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C4B8AE1B363FD6CADA3288 /* libPods-InTownApp.a */; };
 		F20D96FD1B9BF4E4007F50D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F20D96FC1B9BF4E4007F50D4 /* main.m */; };
 		F20D97001B9BF4E4007F50D4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F20D96FF1B9BF4E4007F50D4 /* AppDelegate.m */; };
 		F20D97031B9BF4E4007F50D4 /* InTownApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F20D97011B9BF4E4007F50D4 /* InTownApp.xcdatamodeld */; };
@@ -28,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E13ECD0F406F0BF8E1C948A /* Pods-InTownApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InTownApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-InTownApp/Pods-InTownApp.release.xcconfig"; sourceTree = "<group>"; };
+		63C4B8AE1B363FD6CADA3288 /* libPods-InTownApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InTownApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8345DDD5A41FD76EB0A22E21 /* Pods-InTownApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InTownApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InTownApp/Pods-InTownApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F20D96F71B9BF4E4007F50D4 /* InTownApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InTownApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F20D96FB1B9BF4E4007F50D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F20D96FC1B9BF4E4007F50D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -49,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				088EBB71F05BE45CF9842168 /* libPods-InTownApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,12 +67,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		302EFAD37B1CEC4106466E2B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63C4B8AE1B363FD6CADA3288 /* libPods-InTownApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A75C402A5998233D43DB8D80 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8345DDD5A41FD76EB0A22E21 /* Pods-InTownApp.debug.xcconfig */,
+				4E13ECD0F406F0BF8E1C948A /* Pods-InTownApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F20D96EE1B9BF4E4007F50D4 = {
 			isa = PBXGroup;
 			children = (
 				F20D96F91B9BF4E4007F50D4 /* InTownApp */,
 				F20D97161B9BF4E5007F50D4 /* InTownAppTests */,
 				F20D96F81B9BF4E4007F50D4 /* Products */,
+				A75C402A5998233D43DB8D80 /* Pods */,
+				302EFAD37B1CEC4106466E2B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,9 +153,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F20D971D1B9BF4E5007F50D4 /* Build configuration list for PBXNativeTarget "InTownApp" */;
 			buildPhases = (
+				A37DD15639C7A28C8CEFFDE9 /* Check Pods Manifest.lock */,
 				F20D96F31B9BF4E4007F50D4 /* Sources */,
 				F20D96F41B9BF4E4007F50D4 /* Frameworks */,
 				F20D96F51B9BF4E4007F50D4 /* Resources */,
+				F47F8EC2B4A658551E90023D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -216,6 +242,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A37DD15639C7A28C8CEFFDE9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F47F8EC2B4A658551E90023D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InTownApp/Pods-InTownApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F20D96F31B9BF4E4007F50D4 /* Sources */ = {
@@ -349,6 +408,7 @@
 		};
 		F20D971E1B9BF4E5007F50D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8345DDD5A41FD76EB0A22E21 /* Pods-InTownApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = InTownApp/Info.plist;
@@ -359,6 +419,7 @@
 		};
 		F20D971F1B9BF4E5007F50D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E13ECD0F406F0BF8E1C948A /* Pods-InTownApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = InTownApp/Info.plist;
@@ -420,6 +481,7 @@
 				F20D971F1B9BF4E5007F50D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F20D97201B9BF4E5007F50D4 /* Build configuration list for PBXNativeTarget "InTownAppTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +490,7 @@
 				F20D97221B9BF4E5007F50D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

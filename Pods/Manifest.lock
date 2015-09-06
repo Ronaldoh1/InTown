@@ -96,6 +96,11 @@ PODS:
     - MRProgress/Helper
   - Parse (1.8.2):
     - Bolts/Tasks (>= 1.2.1)
+  - ParseFacebookUtilsV4 (1.8.2):
+    - Bolts/Tasks (>= 1.2.1)
+    - FBSDKCoreKit (~> 4.0)
+    - FBSDKLoginKit (~> 4.0)
+    - Parse (~> 1.8.2)
 
 DEPENDENCIES:
   - FBSDKCoreKit
@@ -104,6 +109,7 @@ DEPENDENCIES:
   - MRProgress
   - MRProgress/AFNetworking
   - Parse
+  - ParseFacebookUtilsV4
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
@@ -113,5 +119,6 @@ SPEC CHECKSUMS:
   FBSDKShareKit: 642034ac9f30793dfd897851b724bb4281750266
   MRProgress: f4cfe862082418e8f542f077772283f425d6c699
   Parse: 188601c6cd91fae55906badd283b513104a3a8c9
+  ParseFacebookUtilsV4: 6e7415146935e1238ebabbee7e5d32d148027b2d
 
 COCOAPODS: 0.38.2

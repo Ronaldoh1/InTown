@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PFh-TQ-6Qq">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Intial Screen-->
+        <scene sceneID="tk4-j6-BfY">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeVC" title="Intial Screen" id="PFh-TQ-6Qq" customClass="WelcomeVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fh9-3I-IyA"/>
+                        <viewControllerLayoutGuide type="bottom" id="zkM-D9-nSU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dbg-OO-jhp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IntownLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="hzE-ae-4Wp">
+                                <rect key="frame" x="0.0" y="64" width="320" height="229"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZc-Ce-05O">
+                                <rect key="frame" x="158" y="328" width="4" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="4" id="CFQ-wa-J11"/>
+                                    <constraint firstAttribute="height" constant="21" id="WvP-ff-Ffc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWh-7N-Hhj">
+                                <rect key="frame" x="164" y="338" width="140" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="tuO-X9-MqR"/>
+                                    <constraint firstAttribute="width" constant="140" id="wc3-Wh-8VY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSignUpButtonTapped:" destination="PFh-TQ-6Qq" eventType="touchUpInside" id="LAF-ky-Hhw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Zx-Gd-8W1">
+                                <rect key="frame" x="9" y="404" width="141" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Cd5-Uc-8dm"/>
+                                </constraints>
+                                <state key="normal" image="facebookLoginButton.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSignInWithFacebookButtonTapped:" destination="PFh-TQ-6Qq" eventType="touchUpInside" id="FhT-Md-dt2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anB-Jh-tt9">
+                                <rect key="frame" x="171" y="404" width="140" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="QYk-yh-neH"/>
+                                </constraints>
+                                <state key="normal" image="twitterLoginButton.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSignInWithTwitterButtonTapped:" destination="PFh-TQ-6Qq" eventType="touchUpInside" id="P7D-aM-e7C"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrM-Wh-BhI">
+                                <rect key="frame" x="157" y="413" width="7" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="7" id="FBH-sZ-3aG"/>
+                                    <constraint firstAttribute="height" constant="21" id="KoA-tr-1aA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50D-x4-NW0">
+                                <rect key="frame" x="16" y="338" width="140" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="r2I-ax-LXL"/>
+                                    <constraint firstAttribute="height" constant="36" id="t5m-NS-tuo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSignInButtonTapped:" destination="PFh-TQ-6Qq" eventType="touchUpInside" id="M4Y-Sf-0Od"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98823529409999999" green="0.36862745099999999" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="eZc-Ce-05O" secondAttribute="centerX" id="ErH-p4-gJT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="anB-Jh-tt9" secondAttribute="trailing" constant="-7" id="Gsf-fU-ASb"/>
+                            <constraint firstAttribute="centerY" secondItem="eZc-Ce-05O" secondAttribute="centerY" constant="-98.5" id="Izb-7M-4pr"/>
+                            <constraint firstAttribute="centerY" secondItem="50D-x4-NW0" secondAttribute="centerY" constant="-116" id="KBT-8s-P6o"/>
+                            <constraint firstItem="eZc-Ce-05O" firstAttribute="leading" secondItem="50D-x4-NW0" secondAttribute="trailing" constant="2" id="NYv-14-IIG"/>
+                            <constraint firstItem="anB-Jh-tt9" firstAttribute="leading" secondItem="wrM-Wh-BhI" secondAttribute="trailing" constant="7" id="QzN-bD-40j"/>
+                            <constraint firstItem="hzE-ae-4Wp" firstAttribute="top" secondItem="Dbg-OO-jhp" secondAttribute="topMargin" constant="64" id="SfC-7M-TiI"/>
+                            <constraint firstItem="3Zx-Gd-8W1" firstAttribute="leading" secondItem="Dbg-OO-jhp" secondAttribute="leadingMargin" constant="-7" id="VId-2g-sqc"/>
+                            <constraint firstItem="anB-Jh-tt9" firstAttribute="top" secondItem="vWh-7N-Hhj" secondAttribute="bottom" constant="30" id="e2S-nm-O69"/>
+                            <constraint firstItem="vWh-7N-Hhj" firstAttribute="leading" secondItem="eZc-Ce-05O" secondAttribute="trailing" constant="2" id="gWB-pB-DEL"/>
+                            <constraint firstAttribute="centerY" secondItem="wrM-Wh-BhI" secondAttribute="centerY" constant="-183.5" id="hn5-JE-3ws"/>
+                            <constraint firstItem="3Zx-Gd-8W1" firstAttribute="top" secondItem="50D-x4-NW0" secondAttribute="bottom" constant="30" id="iNe-Vf-HVB"/>
+                            <constraint firstAttribute="centerX" secondItem="wrM-Wh-BhI" secondAttribute="centerX" id="iig-9V-MiV"/>
+                            <constraint firstItem="hzE-ae-4Wp" firstAttribute="leading" secondItem="Dbg-OO-jhp" secondAttribute="leadingMargin" constant="-16" id="kxz-Bw-iqS"/>
+                            <constraint firstItem="zkM-D9-nSU" firstAttribute="top" secondItem="hzE-ae-4Wp" secondAttribute="bottom" constant="187" id="o9H-fB-ypR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hzE-ae-4Wp" secondAttribute="trailing" constant="-16" id="pxy-dx-dxH"/>
+                            <constraint firstAttribute="centerY" secondItem="vWh-7N-Hhj" secondAttribute="centerY" constant="-116" id="tCJ-gk-QCZ"/>
+                            <constraint firstItem="wrM-Wh-BhI" firstAttribute="leading" secondItem="3Zx-Gd-8W1" secondAttribute="trailing" constant="7" id="zms-GZ-m3c"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="loginButton" destination="50D-x4-NW0" id="zZx-dQ-XNn"/>
+                        <outlet property="signupButton" destination="vWh-7N-Hhj" id="RQu-0J-Hn4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ni3-of-ait" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="254" y="435"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="IntownLogo.png" width="1569" height="1042"/>
+        <image name="facebookLoginButton.png" width="566" height="121"/>
+        <image name="twitterLoginButton.png" width="574" height="120"/>
+    </resources>
+</document>

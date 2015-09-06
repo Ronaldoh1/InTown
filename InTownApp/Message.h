@@ -9,12 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 #import "User.h"
-#import "Activity.h"
+
 
 @interface Message : PFObject<PFSubclassing>
 
 @property (nonatomic, strong) NSString *subject;
-@property (nonatomic, strong) User *recipient;
 @property (nonatomic, strong) NSString *recipientUsername;
 @property (nonatomic, strong) NSString *senderUsername;
 @property (nonatomic, strong) User *sender;

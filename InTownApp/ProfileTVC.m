@@ -257,7 +257,7 @@
 
 #pragma mark - UITableView Delegate Methods
 
-//the following method will not allow to select items in the first section but will allow the user to select items in the second section.
+//the following method will not allow to select items in the last section. 
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     return nil;

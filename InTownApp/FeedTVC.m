@@ -12,6 +12,7 @@
 #import "MRProgress.h"
 #import "Post.h"
 #import "PostCustomCell.h"
+#import "AppDelegate.h"
 
 @interface FeedTVC ()<CLLocationManagerDelegate>
 @property UIImage *tempImage;
@@ -334,6 +335,31 @@
     }];
     }
 }
+
+- (IBAction)onUsernameTapped:(UIButton *)sender {
+
+    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
+    Post *selectedPost = (Post *)self.postsArray[indexPath.row];
+
+    User *user = [User new];
+
+
+    user = selectedPost.postOwner;
+
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
+
+    appDelegate.selectedUser = user;
+
+    UIStoryboard *UserDetailStoryboard = [UIStoryboard storyboardWithName:@"UserProfile" bundle:nil];
+    UINavigationController *userDetailNavVC = [UserDetailStoryboard instantiateViewControllerWithIdentifier:@"userDetailNavVC"];
+
+    [self presentViewController:userDetailNavVC animated:YES completion:nil];
+
+
+}
+
 - (IBAction)onCoolButtonTapped:(UIButton *)sender {
 
     CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];

@@ -62,6 +62,9 @@
 		F20D97B81B9C47F8007F50D4 /* InboxVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F20D97B51B9C47F8007F50D4 /* InboxVC.m */; };
 		F20D97BB1B9C6F26007F50D4 /* Inbox.m in Sources */ = {isa = PBXBuildFile; fileRef = F20D97BA1B9C6F26007F50D4 /* Inbox.m */; };
 		F20D97BE1B9C6F45007F50D4 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = F20D97BD1B9C6F45007F50D4 /* Message.m */; };
+		F20D97C01B9CE99A007F50D4 /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F20D97BF1B9CE99A007F50D4 /* UserProfile.storyboard */; };
+		F20D97C31B9CF1AD007F50D4 /* chatIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F20D97C21B9CF1AD007F50D4 /* chatIcon.png */; };
+		F20D97C61B9CF43C007F50D4 /* UserDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F20D97C51B9CF43C007F50D4 /* UserDetailTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -164,6 +167,10 @@
 		F20D97BA1B9C6F26007F50D4 /* Inbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inbox.m; sourceTree = "<group>"; };
 		F20D97BC1B9C6F45007F50D4 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
 		F20D97BD1B9C6F45007F50D4 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		F20D97BF1B9CE99A007F50D4 /* UserProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProfile.storyboard; sourceTree = "<group>"; };
+		F20D97C21B9CF1AD007F50D4 /* chatIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatIcon.png; sourceTree = "<group>"; };
+		F20D97C41B9CF43C007F50D4 /* UserDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailTVC.h; sourceTree = "<group>"; };
+		F20D97C51B9CF43C007F50D4 /* UserDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +244,7 @@
 				F20D97BA1B9C6F26007F50D4 /* Inbox.m */,
 				F20D97BC1B9C6F45007F50D4 /* Message.h */,
 				F20D97BD1B9C6F45007F50D4 /* Message.m */,
+				F20D97C11B9CE99F007F50D4 /* User Profile */,
 				F20D979A1B9C3A4E007F50D4 /* Feed */,
 				F20D977B1B9C3206007F50D4 /* Profile */,
 				F20D976A1B9C3109007F50D4 /* Inbox */,
@@ -290,6 +298,7 @@
 				F20D97481B9BFD7D007F50D4 /* SplashScreen */,
 				F20D973F1B9BFD2F007F50D4 /* Languages */,
 				F20D973E1B9BFD1E007F50D4 /* Buttons */,
+				F20D97C21B9CF1AD007F50D4 /* chatIcon.png */,
 				F20D97371B9BFCFB007F50D4 /* Messages */,
 				F20D97361B9BFCB6007F50D4 /* App Icons */,
 			);
@@ -439,6 +448,16 @@
 			name = Policy;
 			sourceTree = "<group>";
 		};
+		F20D97C11B9CE99F007F50D4 /* User Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F20D97BF1B9CE99A007F50D4 /* UserProfile.storyboard */,
+				F20D97C41B9CF43C007F50D4 /* UserDetailTVC.h */,
+				F20D97C51B9CF43C007F50D4 /* UserDetailTVC.m */,
+			);
+			name = "User Profile";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -524,6 +543,7 @@
 			files = (
 				F20D97461B9BFD75007F50D4 /* spa.png in Resources */,
 				F20D97501B9BFDD8007F50D4 /* defaultImage.png in Resources */,
+				F20D97C31B9CF1AD007F50D4 /* chatIcon.png in Resources */,
 				F20D97471B9BFD75007F50D4 /* us.png in Resources */,
 				F20D97091B9BF4E4007F50D4 /* Main.storyboard in Resources */,
 				F20D973B1B9BFD0E007F50D4 /* grey_2.png in Resources */,
@@ -543,6 +563,7 @@
 				F20D973D1B9BFD19007F50D4 /* blueDot.png in Resources */,
 				F20D97451B9BFD75007F50D4 /* fr.png in Resources */,
 				F20D97971B9C3A41007F50D4 /* Feed.storyboard in Resources */,
+				F20D97C01B9CE99A007F50D4 /* UserProfile.storyboard in Resources */,
 				F20D97531B9BFEF1007F50D4 /* LaunchScreen.xib in Resources */,
 				F20D974F1B9BFDD8007F50D4 /* cityOnlyLogo.png in Resources */,
 				F20D973A1B9BFD0E007F50D4 /* aqua.png in Resources */,
@@ -619,6 +640,7 @@
 				F20D977E1B9C3250007F50D4 /* TermAndConditionsVC.m in Sources */,
 				F20D97991B9C3A41007F50D4 /* PostCustomCell.m in Sources */,
 				F20D97761B9C3201007F50D4 /* ProfileTVC.m in Sources */,
+				F20D97C61B9CF43C007F50D4 /* UserDetailTVC.m in Sources */,
 				F20D97B61B9C47F8007F50D4 /* InboxCustomCell.m in Sources */,
 				F20D97B81B9C47F8007F50D4 /* InboxVC.m in Sources */,
 				F20D97591B9C059C007F50D4 /* WelcomeVC.m in Sources */,

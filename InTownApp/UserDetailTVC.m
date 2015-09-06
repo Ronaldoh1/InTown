@@ -9,6 +9,7 @@
 #import "UserDetailTVC.h"
 #import "User.h"
 #import "AppDelegate.h"
+#import "Inbox.h"
 
 @interface UserDetailTVC ()
 
@@ -40,8 +41,6 @@
 @property  (weak, nonatomic) UIWindow *window;
 
 @property  (weak, nonatomic)  NSArray *preferencesSelectionArray;
-
-@property (weak, nonatomic) IBOutlet UIImageView *userBadge;
 
 @end
 
@@ -173,6 +172,27 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+
+    if (indexPath.section == 3 && indexPath.row == 0) {
+        Inbox *newInboxItem = [Inbox new];
+
+        newInboxItem.messageContact = [User currentUser];
+        newInboxItem.messageContactUsername = [User currentUser].username;
+        newInboxItem.inboxOwner = self.selectedUser;
+        newInboxItem.inboxOwnerUsername = self.selectedUser.username;
+
+        [newInboxItem saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+
+                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Mail" bundle:nil];
+                UIViewController *NavVC = [storyBoard instantiateViewControllerWithIdentifier:@"mailNavVC"];
+                [self presentViewController:NavVC animated:YES completion:nil];
+
+            }
+
+        }];
+    }
 }
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 

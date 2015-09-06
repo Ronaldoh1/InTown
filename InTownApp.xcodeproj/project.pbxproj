@@ -65,6 +65,7 @@
 		F20D97C01B9CE99A007F50D4 /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F20D97BF1B9CE99A007F50D4 /* UserProfile.storyboard */; };
 		F20D97C31B9CF1AD007F50D4 /* chatIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F20D97C21B9CF1AD007F50D4 /* chatIcon.png */; };
 		F20D97C61B9CF43C007F50D4 /* UserDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F20D97C51B9CF43C007F50D4 /* UserDetailTVC.m */; };
+		F2BBF5FC1B9CFBE70010CB6D /* DialogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBF5FB1B9CFBE70010CB6D /* DialogVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -171,6 +172,8 @@
 		F20D97C21B9CF1AD007F50D4 /* chatIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatIcon.png; sourceTree = "<group>"; };
 		F20D97C41B9CF43C007F50D4 /* UserDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailTVC.h; sourceTree = "<group>"; };
 		F20D97C51B9CF43C007F50D4 /* UserDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailTVC.m; sourceTree = "<group>"; };
+		F2BBF5FA1B9CFBE70010CB6D /* DialogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogVC.h; sourceTree = "<group>"; };
+		F2BBF5FB1B9CFBE70010CB6D /* DialogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialogVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -412,6 +415,8 @@
 				F20D97B31B9C47F8007F50D4 /* InboxSearchResultTVC.m */,
 				F20D97B41B9C47F8007F50D4 /* InboxVC.h */,
 				F20D97B51B9C47F8007F50D4 /* InboxVC.m */,
+				F2BBF5FA1B9CFBE70010CB6D /* DialogVC.h */,
+				F2BBF5FB1B9CFBE70010CB6D /* DialogVC.m */,
 			);
 			name = Inbox;
 			sourceTree = "<group>";
@@ -628,6 +633,7 @@
 			files = (
 				F20D97001B9BF4E4007F50D4 /* AppDelegate.m in Sources */,
 				F20D96FD1B9BF4E4007F50D4 /* main.m in Sources */,
+				F2BBF5FC1B9CFBE70010CB6D /* DialogVC.m in Sources */,
 				F20D977A1B9C3201007F50D4 /* SignUpVC.m in Sources */,
 				F20D97981B9C3A41007F50D4 /* FeedTVC.m in Sources */,
 				F20D97BB1B9C6F26007F50D4 /* Inbox.m in Sources */,

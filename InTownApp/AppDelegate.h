@@ -19,6 +19,7 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 @property User *selectedUser;
+@property User *selectedRecepient;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

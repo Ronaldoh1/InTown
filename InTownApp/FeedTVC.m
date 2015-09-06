@@ -8,18 +8,14 @@
 
 #import "FeedTVC.h"
 #import "User.h"
-<<<<<<< HEAD
 #import "MRProgressOverlayView.h"
 #import "MRProgress.h"
 #import "Post.h"
 #import "PostCustomCell.h"
-=======
->>>>>>> parent of bb7bc3e... able to tweet
 
-@interface FeedTVC ()
+@interface FeedTVC ()<CLLocationManagerDelegate>
 @property UIImage *tempImage;
 @property User *currentUser;
-<<<<<<< HEAD
 @property UIWindow *window;
 @property NSMutableArray *postsArray;
 @property CLLocation *currentLocation;
@@ -27,8 +23,6 @@
 @property CLLocation *initialLocation;
 @property PFGeoPoint *currentGeoPoint;
 @property (weak, nonatomic) IBOutlet UITextView *postTextView;
-=======
->>>>>>> parent of bb7bc3e... able to tweet
 
 @end
 
@@ -38,7 +32,6 @@
     [super viewDidLoad];
     
     [self setUpProfileImage];
-<<<<<<< HEAD
     [self performInitialSetup];
 }
 
@@ -140,6 +133,7 @@
     [self getUserInformationFromParse:^{
        [self getUserCurrentLocation];
         [self setUpProfileImage];
+        [self downloadPosts];
 
         [MRProgressOverlayView dismissOverlayForView: self.window animated:YES];
     } afterDelay:2.0];
@@ -221,13 +215,13 @@
 
                        
                    }];
-=======
->>>>>>> parent of bb7bc3e... able to tweet
 }
+
+
 //helper method to set up profile image button
 -(void)setUpProfileImage{
 
-    if (self.currentUser != nil){
+    if ([User currentUser] != nil){
         //create an image and assign it to defualt image
 
         [self getUsersProfileImage];
@@ -304,7 +298,6 @@
     }];
 }
 
-<<<<<<< HEAD
 - (void)refresh:(UIRefreshControl *)refreshControl {
     // Do your job, when done:
 
@@ -340,6 +333,39 @@
         }
     }];
     }
+}
+- (IBAction)onCoolButtonTapped:(UIButton *)sender {
+
+    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
+    Post *selectedPost = (Post *)self.postsArray[indexPath.row];
+
+    Post *tempPost = [Post new];
+
+    tempPost.postOwner = [User currentUser];
+    tempPost.postOnwerUsername = [User currentUser].username;
+    tempPost.postText = [NSString stringWithFormat:@"Re: @%@ %@",selectedPost.postOnwerUsername, selectedPost.postText];
+
+    tempPost.locationGeoPoint = self.currentGeoPoint;
+
+    [tempPost saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+
+        if (succeeded) {
+
+            [self.postTextView resignFirstResponder];
+            //set up the textView
+            self.postTextView.text = @"In Town? Let others know what you're up to!";
+            self.postTextView.textColor = [UIColor lightGrayColor];
+            [self downloadPosts];
+            [self.tableView reloadData];
+
+            
+        }
+        
+        
+    }];
+
+  indexPath = nil;
 }
 
 - (IBAction)onPostButtonDone:(UIButton *)sender {
@@ -381,8 +407,6 @@
 }
 
 
-=======
->>>>>>> parent of bb7bc3e... able to tweet
 /*helper method to show user's profile. present the account view controller to display menus for user
  if the current user does not exist, then make him/her sign up.*/
 
@@ -406,16 +430,14 @@
 
     return self.postsArray.count;
 }
+- (IBAction)onInboxButtonTapped:(UIBarButtonItem *)sender {
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Mail" bundle:nil];
+    UIViewController *NavVC = [storyBoard instantiateViewControllerWithIdentifier:@"mailNavVC"];
+    [self presentViewController:NavVC animated:YES completion:nil];
+
+
 }
-<<<<<<< HEAD
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     PostCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
@@ -425,19 +447,41 @@
     tempPost = (Post *)(self.postsArray[indexPath.row]);
 
     cell.postText.text = tempPost.postText;
-    cell.posterUserName.titleLabel.text = [NSString stringWithFormat:@"@%@", tempPost.postOnwerUsername];
+
+     [cell.posterUserName setTitle:[NSString stringWithFormat:@"@%@", tempPost.postOnwerUsername] forState:UIControlStateNormal];
+
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd-MM-YYYY"];
+
+    NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
+    [timeFormat setDateFormat:@"HH:mm "];
+
+    NSDate *date = tempPost.createdAt;
+
+    NSString *theDate = [dateFormat stringFromDate:date];
+    NSString *theTime = [timeFormat stringFromDate:date];
 
 
-
-
+    cell.postDate.text = [NSString stringWithFormat:@"%@ %@", theTime, theDate];
+//    if ([((Post *)self.postsArray[indexPath.row]).LikerArray containsObject:[User currentUser]]){
+//        cell.likeButton.enabled = NO;
+//        cell.likeButton.alpha = 0.5;
+//    }else {
+//        cell.likeButton.enabled = YES;
+//        cell.likeButton.alpha = 1.0;
+//    }
 
     return cell;
 
 
 }
+-(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    return indexPath;
+}
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+
 }
 
 
@@ -449,52 +493,48 @@
         textView.textColor = [UIColor blackColor]; //optional
     }
     [textView becomeFirstResponder];
-=======
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
->>>>>>> parent of bb7bc3e... able to tweet
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)textViewDidEndEditing:(UITextView *)textView{
+    if ([textView.text isEqualToString:@""]) {
+        textView.text = @"In Town? Let others know what you're up to!";
+        textView.textColor = [UIColor lightGrayColor]; //optional
+    }
+    [textView resignFirstResponder];
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+
+#pragma Marks - hiding keyboard
+//hide keyboard when the user clicks return
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+
+    [self.view endEditing:true];
+    return true;
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
+//helper method
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    if([text isEqualToString:@"\n"])
+        [textView resignFirstResponder];
     return YES;
 }
-*/
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+-(void)getUserInformationFromParse:(void(^)())block afterDelay:(NSTimeInterval)delay{
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC));
+    dispatch_after(popTime,dispatch_get_main_queue(), block);
 }
-*/
+
+
+-(void)saveFbUserInfoToParse:(void(^)())block afterDelay:(NSTimeInterval)delay{
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC));
+    dispatch_after(popTime,dispatch_get_main_queue(), block);
+}
+
+
 
 @end

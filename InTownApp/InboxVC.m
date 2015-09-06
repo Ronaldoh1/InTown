@@ -6,20 +6,20 @@
 ////  Copyright (c) 2015 NeuLynx. All rights reserved.
 ////
 //
-//#import "InboxVC.h"
+#import "InboxVC.h"
 //#import <Parse/Parse.h>
 //#import "User.h"
 //#import "DialogVC.h"
 //#import "AppDelegate.h"
-//
-//#import "InboxCustomCell.h"
+
+#import "InboxCustomCell.h"
 //#import "Inbox.h"
 //#import "InboxSearchResultTVC.h"
 //#import "Alert.h"
 //
 //
-//@interface InboxVC ()<UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating>
-//
+@interface InboxVC ()<UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating>
+
 ////Search Controller
 //@property (nonatomic, strong) UISearchController *searchController;
 //@property (nonatomic, strong) NSMutableArray *searchResults;
@@ -33,9 +33,9 @@
 //
 ////alerts
 //@property NSMutableArray *alertArray;
-//@end
+@end
 //
-//@implementation InboxVC
+@implementation InboxVC
 //
 //- (void)viewDidLoad {
 //    [super viewDidLoad];
@@ -104,6 +104,13 @@
 //
 //    [self downloadInboxForCurrentUser];
 //}
+
+- (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
+
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 //- (IBAction)onDoneButtonDone:(UIBarButtonItem *)sender {
 //    [self dismissViewControllerAnimated:YES completion:nil];
 //}
@@ -111,14 +118,14 @@
 //
 //#pragma mark - UITableView Delegate
 //
-//-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-//
-//    return self.inboxArray.count;
-//}
-//-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//
-//
-//     InboxCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"fromCell"];
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    return 2;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+
+     InboxCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"fromCell"];
 //    User *sender = (User *)(self.inboxArray[indexPath.row]);
 //    [sender fetchIfNeededInBackground];
 //   // Message *message = ((Message *)(self.inboxArray[indexPath.row]));
@@ -144,8 +151,8 @@
 //    }
 //
 //       //cell.detailTextLabel.text = @"You got a Message";
-//    return cell;
-//}
+    return cell;
+}
 //
 //-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 //
@@ -334,4 +341,4 @@
 //        
 //    }];
 //}
-//@end
+@end

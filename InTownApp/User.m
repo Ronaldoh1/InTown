@@ -8,6 +8,9 @@
 
 #import "User.h"
 
+
+#import "User.h"
+
 @implementation User
 @dynamic name;
 @dynamic aboutMe;
@@ -21,6 +24,7 @@
 @dynamic currentLoccation;
 @dynamic inboxArray;
 @dynamic isFbUser;
+@dynamic currentCity;
 
 +(void)load {
     [self registerSubclass];

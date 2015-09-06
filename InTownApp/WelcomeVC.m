@@ -13,6 +13,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <PFTwitterUtils.h>
 
 #import <Accounts/Accounts.h>
 
@@ -91,20 +92,20 @@
 - (IBAction)onSignInWithTwitterButtonTapped:(UIButton *)sender {
 
 
-//    [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
-//        if (!user) {
-//            NSLog(@"Uh oh. The user cancelled the Twitter login.");
-//            return;
-//        } else if (user.isNew) {
-//            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Feed" bundle:nil];
-//            UIViewController *feedNavVC = [storyBoard instantiateViewControllerWithIdentifier:@"FeedNavVC"];
-//            [self presentViewController:feedNavVC animated:YES completion:nil];
-//        } else {
-//            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Feed" bundle:nil];
-//            UIViewController *feedNavVC = [storyBoard instantiateViewControllerWithIdentifier:@"FeedNavVC"];
-//            [self presentViewController:feedNavVC animated:YES completion:nil];
-//        }
-//    }];
+    [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Twitter login.");
+            return;
+        } else if (user.isNew) {
+            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Feed" bundle:nil];
+            UIViewController *feedNavVC = [storyBoard instantiateViewControllerWithIdentifier:@"FeedNavVC"];
+            [self presentViewController:feedNavVC animated:YES completion:nil];
+        } else {
+            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Feed" bundle:nil];
+            UIViewController *feedNavVC = [storyBoard instantiateViewControllerWithIdentifier:@"FeedNavVC"];
+            [self presentViewController:feedNavVC animated:YES completion:nil];
+        }
+    }];
 
 
 }

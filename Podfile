@@ -9,6 +9,7 @@ target 'InTownApp' do
  pod 'FBSDKShareKit'
  pod 'MRProgress'
  pod 'MRProgress/AFNetworking'
+ pod 'ParseTwitterUtils'
  
 end
 

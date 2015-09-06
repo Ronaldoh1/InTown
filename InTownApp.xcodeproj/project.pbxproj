@@ -60,6 +60,8 @@
 		F20D97B61B9C47F8007F50D4 /* InboxCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F20D97B11B9C47F8007F50D4 /* InboxCustomCell.m */; };
 		F20D97B71B9C47F8007F50D4 /* InboxSearchResultTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F20D97B31B9C47F8007F50D4 /* InboxSearchResultTVC.m */; };
 		F20D97B81B9C47F8007F50D4 /* InboxVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F20D97B51B9C47F8007F50D4 /* InboxVC.m */; };
+		F20D97BB1B9C6F26007F50D4 /* Inbox.m in Sources */ = {isa = PBXBuildFile; fileRef = F20D97BA1B9C6F26007F50D4 /* Inbox.m */; };
+		F20D97BE1B9C6F45007F50D4 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = F20D97BD1B9C6F45007F50D4 /* Message.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -158,6 +160,10 @@
 		F20D97B31B9C47F8007F50D4 /* InboxSearchResultTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxSearchResultTVC.m; sourceTree = "<group>"; };
 		F20D97B41B9C47F8007F50D4 /* InboxVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxVC.h; sourceTree = "<group>"; };
 		F20D97B51B9C47F8007F50D4 /* InboxVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxVC.m; sourceTree = "<group>"; };
+		F20D97B91B9C6F26007F50D4 /* Inbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inbox.h; sourceTree = "<group>"; };
+		F20D97BA1B9C6F26007F50D4 /* Inbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inbox.m; sourceTree = "<group>"; };
+		F20D97BC1B9C6F45007F50D4 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		F20D97BD1B9C6F45007F50D4 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +233,10 @@
 				F20D97881B9C32D2007F50D4 /* User.m */,
 				F20D975D1B9C05CC007F50D4 /* Post.h */,
 				F20D975E1B9C05CC007F50D4 /* Post.m */,
+				F20D97B91B9C6F26007F50D4 /* Inbox.h */,
+				F20D97BA1B9C6F26007F50D4 /* Inbox.m */,
+				F20D97BC1B9C6F45007F50D4 /* Message.h */,
+				F20D97BD1B9C6F45007F50D4 /* Message.m */,
 				F20D979A1B9C3A4E007F50D4 /* Feed */,
 				F20D977B1B9C3206007F50D4 /* Profile */,
 				F20D976A1B9C3109007F50D4 /* Inbox */,
@@ -599,8 +609,10 @@
 				F20D96FD1B9BF4E4007F50D4 /* main.m in Sources */,
 				F20D977A1B9C3201007F50D4 /* SignUpVC.m in Sources */,
 				F20D97981B9C3A41007F50D4 /* FeedTVC.m in Sources */,
+				F20D97BB1B9C6F26007F50D4 /* Inbox.m in Sources */,
 				F20D97781B9C3201007F50D4 /* SignInVC.m in Sources */,
 				F20D97061B9BF4E4007F50D4 /* ViewController.m in Sources */,
+				F20D97BE1B9C6F45007F50D4 /* Message.m in Sources */,
 				F20D97891B9C32D2007F50D4 /* User.m in Sources */,
 				F20D97031B9BF4E4007F50D4 /* InTownApp.xcdatamodeld in Sources */,
 				F20D97B71B9C47F8007F50D4 /* InboxSearchResultTVC.m in Sources */,

@@ -348,6 +348,10 @@
 
     tempPost.locationGeoPoint = self.currentGeoPoint;
 
+    if (selectedPost.postOwner != [User currentUser] ) {
+
+
+
     [tempPost saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 
         if (succeeded) {
@@ -364,6 +368,10 @@
         
         
     }];
+
+    }else{
+        NSLog(@"Cannot retweet your own tweet");
+    }
 
   indexPath = nil;
 }

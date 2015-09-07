@@ -19,5 +19,7 @@
 @property NSString *likesCounts;
 @property PFGeoPoint *locationGeoPoint;
 @property NSMutableArray *LikerArray;
+@property NSString *postCity;
+
 
 @end

@@ -56,9 +56,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tpy-iQ-QrR" id="FCx-He-abu">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UeA-9p-Myf">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="UeA-9p-Myf">
                                             <rect key="frame" x="13" y="27" width="267" height="65"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="0.40000000000000002" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -86,9 +86,13 @@
                                                 <action selector="onUsernameTapped:" destination="f5H-YI-TpE" eventType="touchUpInside" id="9Xu-TY-2fh"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Miles Away" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k16-cK-xAo">
-                                            <rect key="frame" x="8" y="85" width="87" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miles Away" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k16-cK-xAo">
+                                            <rect key="frame" x="8" y="85" width="111" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="111" id="3S8-k8-xL5"/>
+                                                <constraint firstAttribute="height" constant="21" id="ehw-H0-q3n"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.40000000000000002" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -125,6 +129,7 @@
                                     <outlet property="coolButton" destination="mEl-cN-NZX" id="Oeo-Pe-v4v"/>
                                     <outlet property="likeButton" destination="mEl-cN-NZX" id="T8I-Hh-jUY"/>
                                     <outlet property="postDate" destination="rb7-35-jI7" id="Rw8-MR-w7Y"/>
+                                    <outlet property="postDistanceFromCurrentUser" destination="k16-cK-xAo" id="UTE-zS-z97"/>
                                     <outlet property="postText" destination="UeA-9p-Myf" id="OmH-wf-wxN"/>
                                     <outlet property="posterUserName" destination="MZ2-mv-GDc" id="BSa-Kb-vyo"/>
                                 </connections>

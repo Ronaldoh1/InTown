@@ -23,6 +23,7 @@
 @property CLLocationManager *locationManager;
 @property CLLocation *initialLocation;
 @property PFGeoPoint *currentGeoPoint;
+@property NSString *currentCity;
 @property (weak, nonatomic) IBOutlet UITextView *postTextView;
 
 @end
@@ -31,7 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+     [self getUserCurrentLocation];
     [self setUpProfileImage];
     [self performInitialSetup];
 }
@@ -65,7 +66,7 @@
     //Get Current User
     self.currentUser = [User currentUser];
 
-    self.currentLocation = [CLLocation new];
+  //  self.currentLocation = [CLLocation new];
 
 
 
@@ -175,6 +176,7 @@
 
 #pragma mark CLLocationManager Delegate
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    self.currentLocation = [CLLocation new];
     self.currentLocation = locations.firstObject;
 
     if (self.currentLocation) {
@@ -210,6 +212,7 @@
 
 
                        self.currentUser.currentCity = placemark.locality;
+                       self.currentCity = placemark.locality;
                        self.currentUser.userAdministrativeArea = placemark.administrativeArea;
                        self.currentUser.userCountryCode = placemark.country;
 
@@ -411,6 +414,7 @@
     post.postOwner = [User currentUser];
     post.postOnwerUsername = [User currentUser].username;
     post.locationGeoPoint = self.currentGeoPoint;
+    post.postCity = self.currentCity;
 
     if (![self.postTextView.text isEqualToString:@""]) {
 
@@ -504,6 +508,15 @@
 //        cell.likeButton.enabled = YES;
 //        cell.likeButton.alpha = 1.0;
 //    }
+
+    //Use CoreLocation to get distance between activity and user's location.
+    CLLocation *postLocation = [[CLLocation alloc]initWithLatitude:tempPost.locationGeoPoint.latitude longitude:tempPost.locationGeoPoint.longitude];
+    CLLocationDistance distance = [postLocation distanceFromLocation:self.currentLocation];
+    double distanceInMiles = distance * (0.00062137);
+
+    cell.postDistanceFromCurrentUser.text = tempPost.postCity;
+
+    
 
     return cell;
 

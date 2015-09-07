@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>InTown would like to know your current location location to retrieve posts near you!</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>InTown would like to always know your location to retrieve posts near you!</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -39,6 +35,10 @@
 	<string>InTown</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>InTown would like to always know your location to retrieve posts near you!</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>InTown would like to know your current location location to retrieve posts near you!</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

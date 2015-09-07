@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *posterUserName;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UILabel *postDate;
+@property (weak, nonatomic) IBOutlet UILabel *postDistanceFromCurrentUser;
 
 @end

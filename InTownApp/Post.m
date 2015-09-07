@@ -16,6 +16,7 @@
 @dynamic locationGeoPoint;
 @dynamic postOnwerUsername;
 @dynamic LikerArray;
+@dynamic postCity;
 
 +(void)load {
     [self registerSubclass];

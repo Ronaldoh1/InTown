@@ -10,7 +10,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashScreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="t88-uj-sF1">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashScreen1x.png" translatesAutoresizingMaskIntoConstraints="NO" id="t88-uj-sF1">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                     <color key="backgroundColor" red="1" green="0.36862745099999999" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
@@ -28,6 +28,6 @@
         </view>
     </objects>
     <resources>
-        <image name="splashScreen.png" width="768" height="768"/>
+        <image name="splashScreen1x.png" width="320" height="480"/>
     </resources>
 </document>

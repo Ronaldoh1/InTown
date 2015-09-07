@@ -22,6 +22,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *aboutMeTextView;
 
+@property (weak, nonatomic) IBOutlet UITextField *username;
 
 @property NSMutableArray *languageArray;
 
@@ -71,7 +72,7 @@
     titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
     titleView.font = [UIFont fontWithName:@"Helvetica" size:20];
     titleView.text = @"Profile";
-    titleView.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
+    titleView.textColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1];
     [self.navigationItem setTitleView:titleView];
 
 
@@ -156,7 +157,7 @@
 - (IBAction)onSaveButtonTapped:(UIBarButtonItem *)sender {
 
 
-    if ([self.nameTextField.text isEqualToString:@""] || [self.ageTextField.text isEqualToString:@""]) {
+    if ([self.nameTextField.text isEqualToString:@""] || [self.ageTextField.text isEqualToString:@""] || [self.username.text isEqualToString:@""]) {
         [self displayAlertWithTitle:@"Error in Form" andWithMessage:@"Personal information cannot be blank"];
     } else {
         self.currentUser.name = self.nameTextField.text;
@@ -186,6 +187,7 @@
         }
 
         self.currentUser.languageArray = self.languageArray;
+        self.currentUser.username = self.username.text;
         self.currentUser.aboutMe = self.aboutMeTextView.text;
 
         NSData *imageData = UIImagePNGRepresentation(self.profileImage.image);

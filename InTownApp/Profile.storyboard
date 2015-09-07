@@ -94,6 +94,28 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="VI8-ri-tA5">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VI8-ri-tA5" id="cby-Rl-JXh">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vDb-eE-0e5">
+                                                    <rect key="frame" x="8" y="7" width="304" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="pkY-OE-YXn" id="Thl-5w-O5p"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="vDb-eE-0e5" secondAttribute="bottom" constant="-2" id="TME-cb-Ag5"/>
+                                                <constraint firstItem="vDb-eE-0e5" firstAttribute="top" secondItem="cby-Rl-JXh" secondAttribute="topMargin" constant="-1" id="bjs-Qq-665"/>
+                                                <constraint firstItem="vDb-eE-0e5" firstAttribute="leading" secondItem="cby-Rl-JXh" secondAttribute="leadingMargin" id="t2S-lC-0e9"/>
+                                                <constraint firstItem="vDb-eE-0e5" firstAttribute="trailing" secondItem="cby-Rl-JXh" secondAttribute="trailingMargin" id="wYF-vV-mWA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="P6v-s7-0dU">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P6v-s7-0dU" id="CYk-Q6-d2a">
@@ -293,6 +315,7 @@
                         <outlet property="portugueseButton" destination="Fjg-Og-qWV" id="ptx-Ne-OPP"/>
                         <outlet property="profileImage" destination="SKw-Gv-iQX" id="6zv-Wi-KlO"/>
                         <outlet property="spanishButton" destination="XVT-Q1-eZd" id="y7C-P1-4H7"/>
+                        <outlet property="username" destination="vDb-eE-0e5" id="5pM-Ew-Gxf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KW5-f3-Bd4" userLabel="First Responder" sceneMemberID="firstResponder"/>

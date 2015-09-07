@@ -13,6 +13,10 @@
 #import "Post.h"
 #import "PostCustomCell.h"
 #import "AppDelegate.h"
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface FeedTVC ()<CLLocationManagerDelegate>
 @property UIImage *tempImage;
@@ -282,6 +286,8 @@
     
 }
 
+
+
 ////Helper method to download user's profile image
 -(void)getUsersProfileImage{
 
@@ -512,7 +518,7 @@
     //Use CoreLocation to get distance between activity and user's location.
     CLLocation *postLocation = [[CLLocation alloc]initWithLatitude:tempPost.locationGeoPoint.latitude longitude:tempPost.locationGeoPoint.longitude];
     CLLocationDistance distance = [postLocation distanceFromLocation:self.currentLocation];
-    double distanceInMiles = distance * (0.00062137);
+    //double distanceInMiles = distance * (0.00062137);
 
     cell.postDistanceFromCurrentUser.text = tempPost.postCity;
 

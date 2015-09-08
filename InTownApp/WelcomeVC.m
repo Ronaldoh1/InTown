@@ -34,12 +34,6 @@
     self.signupButton.layer.borderWidth = 2.0;
     self.loginButton.layer.borderColor  = [UIColor whiteColor].CGColor;
     self.signupButton.layer.borderColor = [UIColor whiteColor].CGColor;
-    // Send a notification to all devices subscribed to the "Giants" channel.
-    PFPush *push = [[PFPush alloc] init];
-    [push setChannel:@"Giants"];
-    [push setMessage:@"The Giants just scored!"];
-    [push sendPushInBackground];
-
 
 }
 -(void)viewDidAppear:(BOOL)animated{

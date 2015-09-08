@@ -59,7 +59,7 @@
     titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
     titleView.font = [UIFont fontWithName:@"Helvetica" size:20];
     titleView.text = @"Inbox";
-    titleView.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
+    titleView.textColor =  [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1];
     [self.navigationItem setTitleView:titleView];
 
     //initialize the inboxArray

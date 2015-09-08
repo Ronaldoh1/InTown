@@ -369,7 +369,7 @@
 
 }
 
-- (IBAction)onCoolButtonTapped:(UIButton *)sender {
+- (IBAction)onRepostButtonTapped:(UIButton *)sender {
 
     CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
@@ -391,6 +391,22 @@
 
         if (succeeded) {
 
+
+
+//            // Create our Installation query
+//            PFQuery *pushQuery = [PFInstallation query];
+//            // only return Installations that belong to a User that
+//
+//            [pushQuery whereKey:@"user" equalTo:tempPost.postOwner];
+//
+//            // Send push notification to query
+//            PFPush *push = [[PFPush alloc] init];
+//
+//            [push setQuery:pushQuery]; // Set our Installation query
+//            [push setMessage:[NSString stringWithFormat:@"%@ Sent you a message", [User currentUser].name]];
+//
+//            [push sendPushInBackground];
+//
             [self.postTextView resignFirstResponder];
             //set up the textView
             self.postTextView.text = @"In Town? Let others know what you're up to!";
@@ -516,8 +532,8 @@
 //    }
 
     //Use CoreLocation to get distance between activity and user's location.
-    CLLocation *postLocation = [[CLLocation alloc]initWithLatitude:tempPost.locationGeoPoint.latitude longitude:tempPost.locationGeoPoint.longitude];
-    CLLocationDistance distance = [postLocation distanceFromLocation:self.currentLocation];
+//    CLLocation *postLocation = [[CLLocation alloc]initWithLatitude:tempPost.locationGeoPoint.latitude longitude:tempPost.locationGeoPoint.longitude];
+    // CLLocationDistance distance = [postLocation distanceFromLocation:self.currentLocation];
     //double distanceInMiles = distance * (0.00062137);
 
     cell.postDistanceFromCurrentUser.text = tempPost.postCity;

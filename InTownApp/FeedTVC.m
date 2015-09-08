@@ -320,9 +320,11 @@
 
     if (self.currentLocation == nil) {
         NSLog(@" location is nil");
+
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"No Connection" message:@"Please Ensure that you're connected to a network/WiFi" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
     }else{
     PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:self.currentLocation];
-        NSLog(@"%@",geoPoint);
     PFQuery *query = [Post query];
         [query whereKey:@"locationGeoPoint" nearGeoPoint:geoPoint];
        [query orderByDescending:@"createdAt"];
@@ -334,8 +336,6 @@
 
             self.postsArray = [[NSArray alloc]initWithArray:Posts].mutableCopy;
 
-
-            NSLog(@"%@ booom", self.postsArray);
 
 
             [self.tableView reloadData];

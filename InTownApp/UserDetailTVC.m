@@ -80,7 +80,7 @@
     self.profileImage.layer.cornerRadius = self.profileImage.frame.size.height/2;
     self.profileImage.layer.masksToBounds = YES;
     self.profileImage.layer.borderWidth = 4.0;
-    self.profileImage.layer.borderColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1].CGColor;
+    self.profileImage.layer.borderColor = [UIColor colorWithRed:254.0/255.0 green:94/255.0 blue:1.0/255.0 alpha:1].CGColor;
 
 
     //setting image to Navigation Bar's title

@@ -24,6 +24,9 @@
     // Override point for customization after application launch.
 
 
+    //[[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+    //[[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+   // [[UINavigationBar appearance] setBackgroundColor:[UIColor whiteColor]];
     // [Optional] Power your app with Local Datastore. For more info, go to
     // https://parse.com/docs/ios_guide#localdatastore/iOS
     [Parse enableLocalDatastore];

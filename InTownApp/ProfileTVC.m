@@ -75,6 +75,16 @@
     titleView.textColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1];
     [self.navigationItem setTitleView:titleView];
 
+//    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+//    self.navigationController.navigationBar.translucent = YES;
+
+
+//    // Create your image
+//    UIImage *image = [UIImage imageNamed: @"cityOnlyLogo.png"];
+//    UIImageView *imageview = [[UIImageView alloc] initWithImage: image];
+//
+//    // set the text view to the image view
+//    self.navigationItem.titleView = imageview;
 
     //Dim the colors of language buttons
     self.portugueseButton.alpha = 0.3;
@@ -96,6 +106,7 @@
     self.nameTextField.text = self.currentUser.name;
     self.ageTextField.text = self.currentUser.age;
     self.aboutMeTextView.text = self.currentUser.aboutMe;
+    self.username.text = self.currentUser.username;
     //get user's gender
     if ([self.currentUser.gender isEqualToString:@"Male"]) {
         self.genderPicker.selectedSegmentIndex = 0;

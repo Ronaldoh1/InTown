@@ -1,52 +1,53 @@
-////
-////  InboxVC.m
-////  NeuLynx
-////
-////  Created by Ronald Hernandez on 7/11/15.
-////  Copyright (c) 2015 NeuLynx. All rights reserved.
-////
 //
+//  InboxVC.m
+//  NeuLynx
+//
+//  Created by Ronald Hernandez on 7/11/15.
+//  Copyright (c) 2015 NeuLynx. All rights reserved.
+//
+
 #import "InboxVC.h"
 #import <Parse/Parse.h>
 #import "User.h"
 #import "DialogVC.h"
 #import "AppDelegate.h"
+#import "Message.h"
 #import "InboxCustomCell.h"
 #import "Inbox.h"
 #import "InboxSearchResultTVC.h"
-//#import "Alert.h"
-//
-//
+
+
+
 @interface InboxVC ()<UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating>
 
 //Search Controller
 @property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) NSMutableArray *searchResults;
 
-
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @property (strong, atomic) NSMutableArray *inboxArray;
 @property (strong, atomic) DialogVC *activeDialogVC;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneBarButton;
 
 
-////alerts
-//@property NSMutableArray *alertArray;
+//alerts
+@property NSMutableArray *alertArray;
 @end
-//
+
 @implementation InboxVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self initialSetUp]; 
+    [self initialSetUp];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
 
     self.activeDialogVC = nil;
 
-   
+
 
     [self initialSetUp];
     //[self downloadNewAlerts];
@@ -62,11 +63,22 @@
     [self.navigationItem setTitleView:titleView];
 
     //initialize the inboxArray
+    self.inboxArray = [NSMutableArray new];
 
     [self downloadInboxForCurrentUser];
 
+    //    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    //    BOOL tmpBool = *(appDelegate.hideDoneButtonForMessages);
+    //
+    //    if (tmpBool == YES) {
+    //        tmpBool = NO;
+    //        appDelegate.hideDoneButtonForMessages = nil;
+    //        self.navigationItem.rightBarButtonItem = nil;
+    //        self.doneBarButton.enabled = NO;
+    //
+    //    }
 
-//    Instantiate View Controller with Iddentifier - this is necessary because there is no connection in our storyboard to our search results.
+    //Instantiate View Controller with Iddentifier - this is necessary because there is no connection in our storyboard to our search results.
 
     UINavigationController *searchResultsController = [[self storyboard] instantiateViewControllerWithIdentifier:@"TableSearchResultsNavController"];
 
@@ -93,13 +105,6 @@
 
     [self downloadInboxForCurrentUser];
 }
-
-- (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
-
-
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 - (IBAction)onDoneButtonDone:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -114,10 +119,10 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
 
-     InboxCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"fromCell"];
+    InboxCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"fromCell"];
     User *sender = (User *)(self.inboxArray[indexPath.row]);
     [sender fetchIfNeededInBackground];
-   // Message *message = ((Message *)(self.inboxArray[indexPath.row]));
+    // Message *message = ((Message *)(self.inboxArray[indexPath.row]));
     cell.senderNameLabel.text = sender.name;
 
     [sender.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
@@ -128,18 +133,9 @@
 
     }];
 
-//
-//    for (Alert *alert in self.alertArray) {
-//
-//
-//        if ([sender.username isEqualToString:alert.senderUsername] && [alert.messageIsNew isEqualToNumber:@1]) {
-//
-//            cell.blueDot.alpha = 1.0;
-//        }
-//
-//    }
 
-       //cell.detailTextLabel.text = @"You got a Message";
+
+    //cell.detailTextLabel.text = @"You got a Message";
     return cell;
 }
 
@@ -165,10 +161,10 @@
 //            alert.messageIsNew = @0;
 //            selectedAlert = alert;
 //        }
-//        
-//    }
+////
+////    }
 //    [selectedAlert saveInBackground];
-//
+
 
 
     UIStoryboard *detailStoryboard = [UIStoryboard storyboardWithName:@"Mail" bundle:nil];
@@ -239,16 +235,16 @@
 
         for (User *user in self.inboxArray){
             NSRange NameRange = [user.name rangeOfString:searchStr options:NSCaseInsensitiveSearch];
-//            NSRange descriptionRange = [activity.activityDescription rangeOfString:searchStr options:NSCaseInsensitiveSearch];
-//
+            //            NSRange descriptionRange = [activity.activityDescription rangeOfString:searchStr options:NSCaseInsensitiveSearch];
+            //
             if (NameRange.location != NSNotFound) {
 
                 [searchResults addObject:user];
             }
         }
-        
+
         self.searchResults = searchResults;
-        
+
     }
 }
 
@@ -267,10 +263,10 @@
 
     //[query orderByAscending:@"updatedAt"];
 
-//
-//    PFQuery *query = [PFQuery queryWithClassName:@"Inbox"];
-//    [query whereKey:@"inboxOwner" equalTo:[User currentUser]];
-//    [query whereKey:@"messageContact" equalTo:[User currentUser]];
+    //
+    //    PFQuery *query = [PFQuery queryWithClassName:@"Inbox"];
+    //    [query whereKey:@"inboxOwner" equalTo:[User currentUser]];
+    //    [query whereKey:@"messageContact" equalTo:[User currentUser]];
     [query includeKey:@"messageContact"];
     [query includeKey:@"inboxOwner"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
@@ -285,17 +281,17 @@
                     [array addObject:contact.messageContact];
 
                 }else if (![array containsObject:contact.inboxOwner]  && contact.inboxOwner != [User currentUser]){
-                    
+
                     [array addObject:contact.inboxOwner];
                 }
-                }
+            }
 
 
             self.inboxArray = [NSMutableArray arrayWithArray:array];
             [self.tableView reloadData];
-            
+
         }
-        
+
     }];
 }
 
@@ -306,23 +302,23 @@
 //
 //
 //    PFQuery *query = [Alert query];
-//
+//    
 //    [query whereKey:@"recipientUsername" equalTo:[User currentUser].username];
-//
+//    
 //    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
-//
-//
+//        
+//        
 //        if (!error) {
 //            for (Alert *alert in objects) {
-//
-//
-//
+//                
+//                
+//                
 //                if (![array containsObject:alert.senderUsername] )  {
 //                    [array addObject:alert];
-//
+//                    
 //                }
 //            }
-//
+//            
 //            self.alertArray = [NSMutableArray arrayWithArray:array];
 //            [self.tableView reloadData];
 //            

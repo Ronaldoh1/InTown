@@ -82,12 +82,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Inbox" id="9Pf-Ll-Had">
                         <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="29i-xW-rNX">
-                            <connections>
-                                <action selector="onDoneButtonTapped:" destination="M5h-75-FTC" id="NNG-R3-n7U"/>
-                            </connections>
+                            <color key="tintColor" red="1" green="0.36862745099999999" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="doneBarButton" destination="29i-xW-rNX" id="ggx-F0-lzl"/>
+                        <outlet property="tableView" destination="lyQ-4m-IDT" id="PVQ-cs-k50"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CYc-OM-Ndz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

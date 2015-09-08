@@ -92,11 +92,38 @@
 
                 self.navigationItem.leftBarButtonItem.enabled = YES;
                 
-                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Feed" bundle:nil];
-                UIViewController *feedNavVC = [storyBoard instantiateViewControllerWithIdentifier:@"FeedNavVC"];
-                [self presentViewController:feedNavVC animated:YES completion:nil];
+
+
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Username" message:@"Enter a unique username" preferredStyle:UIAlertControllerStyleAlert];
+                [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+                    textField.placeholder = @"Username";
+                }];
+
+
+                UIAlertAction *cancelAction = [UIAlertAction
+                                               actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel action")
+                                               style:UIAlertActionStyleCancel
+                                               handler:^(UIAlertAction *action)
+                                               {
+                                                   NSLog(@"Cancel action");
+                                               }];
+                UIAlertAction *setUsername = [UIAlertAction actionWithTitle:@"Submit" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+
+                    UITextField *textField = alertController.textFields.firstObject;
+                    [User currentUser].username = textField.text;
+                    [[User currentUser] saveInBackground];
+
+
+                    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Feed" bundle:nil];
+                    UIViewController *feedNavVC = [storyBoard instantiateViewControllerWithIdentifier:@"FeedNavVC"];
+                    [self presentViewController:feedNavVC animated:YES completion:nil];
+                }];
                 
+                [alertController addAction:setUsername];
+                [alertController addAction:cancelAction];
                 
+                [self presentViewController:alertController animated:YES
+                                 completion:nil];
                 
             } afterDelay:2];
 
@@ -121,9 +148,48 @@
             NSLog(@"Uh oh. The user cancelled the Twitter login.");
             return;
         } else if (user.isNew) {
-            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Feed" bundle:nil];
-            UIViewController *feedNavVC = [storyBoard instantiateViewControllerWithIdentifier:@"FeedNavVC"];
-            [self presentViewController:feedNavVC animated:YES completion:nil];
+
+
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Username" message:@"Enter a unique username" preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+                textField.placeholder = @"Username";
+            }];
+
+
+            UIAlertAction *cancelAction = [UIAlertAction
+                                           actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel action")
+                                           style:UIAlertActionStyleCancel
+                                           handler:^(UIAlertAction *action)
+                                           {
+                                               NSLog(@"Cancel action");
+                                           }];
+            UIAlertAction *setUsername = [UIAlertAction actionWithTitle:@"Submit" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+
+                UITextField *textField = alertController.textFields.firstObject;
+                [User currentUser].username = textField.text;
+
+
+                NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:@"defaultImage.png"]);
+                PFFile *imageFile = [PFFile fileWithData:imageData];
+
+
+                [User currentUser].profileImage = imageFile;
+                
+                [[User currentUser] saveInBackground];
+
+
+                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Feed" bundle:nil];
+                UIViewController *feedNavVC = [storyBoard instantiateViewControllerWithIdentifier:@"FeedNavVC"];
+                [self presentViewController:feedNavVC animated:YES completion:nil];
+            }];
+
+            [alertController addAction:setUsername];
+            [alertController addAction:cancelAction];
+
+            [self presentViewController:alertController animated:YES
+                             completion:nil];
+
+
         } else {
             UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Feed" bundle:nil];
             UIViewController *feedNavVC = [storyBoard instantiateViewControllerWithIdentifier:@"FeedNavVC"];
@@ -184,6 +250,27 @@
          }
      }];
     
+}
+#pragma mark - UIAlertViewDelegate
+
+-(void)alertView:(UIAlertView *)alertView lickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        default:
+            NSLog(@"did not accept Terms & Conditions...");
+            break;
+        case 1:
+            NSLog(@"accepted Terms & Conditions...");
+
+
+
+            [[User currentUser] saveInBackground];
+            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Feed" bundle:nil];
+            UIViewController *feedNavVC = [storyBoard instantiateViewControllerWithIdentifier:@"FeedNavVC"];
+            [self presentViewController:feedNavVC animated:YES completion:nil];
+
+            break;
+    }
 }
 
 //**********************BLOCKS***********************************************//

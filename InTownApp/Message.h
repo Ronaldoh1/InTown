@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSString *senderUsername;
 @property (nonatomic, strong) User *sender;
 @property (nonatomic, strong) NSString *messageText;
+@property (nonatomic, strong) NSNumber *isNew;
 
 +(NSString *)parseClassName;
 

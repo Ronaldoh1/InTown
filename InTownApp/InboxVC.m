@@ -15,7 +15,7 @@
 #import "InboxCustomCell.h"
 #import "Inbox.h"
 #import "InboxSearchResultTVC.h"
-
+#import "Alert.h"
 
 
 @interface InboxVC ()<UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating>
@@ -50,7 +50,7 @@
 
 
     [self initialSetUp];
-    //[self downloadNewAlerts];
+    [self downloadNewAlerts];
 }
 -(void)initialSetUp{
     //setting image to Navigation Bar's title
@@ -149,21 +149,22 @@
     //we need to mark our alerts as read.
 
 
-//    User *sender = [User new];
-//    sender = (User *)self.inboxArray[indexPath.row];
-//    Alert *selectedAlert = [Alert new];
-//
-//    for (Alert *alert in self.alertArray) {
-//
-//
-//        if ([sender.username isEqualToString:alert.senderUsername] && [alert.messageIsNew isEqualToNumber:@1]) {
-//
-//            alert.messageIsNew = @0;
-//            selectedAlert = alert;
-//        }
-////
-////    }
-//    [selectedAlert saveInBackground];
+    User *sender = [User new];
+    sender = (User *)self.inboxArray[indexPath.row];
+    Alert *selectedAlert = [Alert new];
+
+    for (Alert *alert in self.alertArray) {
+
+
+        if ([sender.username isEqualToString:alert.senderUsername] && [alert.messageIsNew isEqualToNumber:@1]) {
+
+            alert.messageIsNew = @0;
+            [alert saveInBackground];
+
+        }
+
+    }
+
 
 
 
@@ -295,35 +296,35 @@
     }];
 }
 
-//-(void)downloadNewAlerts{
-//    NSMutableArray *array = [NSMutableArray new];
-//
-//
-//
-//
-//    PFQuery *query = [Alert query];
-//    
-//    [query whereKey:@"recipientUsername" equalTo:[User currentUser].username];
-//    
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
-//        
-//        
-//        if (!error) {
-//            for (Alert *alert in objects) {
-//                
-//                
-//                
-//                if (![array containsObject:alert.senderUsername] )  {
-//                    [array addObject:alert];
-//                    
-//                }
-//            }
-//            
-//            self.alertArray = [NSMutableArray arrayWithArray:array];
-//            [self.tableView reloadData];
-//            
-//        }
-//        
-//    }];
-//}
+-(void)downloadNewAlerts{
+    NSMutableArray *array = [NSMutableArray new];
+
+
+
+
+    PFQuery *query = [Alert query];
+    
+    [query whereKey:@"recipientUsername" equalTo:[User currentUser].username];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
+        
+        
+        if (!error) {
+            for (Alert *alert in objects) {
+                
+                
+                
+                if (![array containsObject:alert.senderUsername] )  {
+                    [array addObject:alert];
+                    
+                }
+            }
+            
+            self.alertArray = [NSMutableArray arrayWithArray:array];
+            [self.tableView reloadData];
+            
+        }
+        
+    }];
+}
 @end

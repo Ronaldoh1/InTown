@@ -138,7 +138,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="What's Happening?" id="wNw-SF-x2J">
                         <barButtonItem key="rightBarButtonItem" image="inboxButton.png" style="done" id="pBW-PA-5KB">
-                            <inset key="imageInsets" minX="30" minY="12" maxX="7" maxY="9"/>
+                            <inset key="imageInsets" minX="38" minY="11" maxX="-1" maxY="9"/>
                             <color key="tintColor" red="0.98823529409999999" green="0.36862745099999999" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onInboxButtonTapped:" destination="f5H-YI-TpE" id="sGZ-q6-l2N"/>
@@ -147,6 +147,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="messageButton" destination="pBW-PA-5KB" id="xPP-qe-gUm"/>
                         <outlet property="postTextView" destination="Jpk-om-zmh" id="nga-mf-sYn"/>
                     </connections>
                 </tableViewController>

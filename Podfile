@@ -10,7 +10,7 @@ target 'InTownApp' do
  pod 'MRProgress'
  pod 'MRProgress/AFNetworking'
  pod 'ParseTwitterUtils'
- 
+
 end
 
 target 'InTownAppTests' do

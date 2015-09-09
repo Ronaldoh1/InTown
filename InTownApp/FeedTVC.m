@@ -17,6 +17,10 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "Alert.h"
+#import "GIBadgeView.h"
+#import "BBBadgeBarButtonItem.h"
+#import "UIBarButtonItem+Badge.h"
 
 @interface FeedTVC ()<CLLocationManagerDelegate>
 @property UIImage *tempImage;
@@ -29,6 +33,8 @@
 @property PFGeoPoint *currentGeoPoint;
 @property NSString *currentCity;
 @property (weak, nonatomic) IBOutlet UITextView *postTextView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *messageButton;
+
 
 @end
 
@@ -39,6 +45,7 @@
      [self getUserCurrentLocation];
     [self setUpProfileImage];
     [self performInitialSetup];
+    [self checkForNewMessages];
 }
 
 
@@ -52,6 +59,7 @@
         [self setUpProfileImage];
         
     }
+      [self checkForNewMessages];
 
 }
 
@@ -492,6 +500,8 @@
 }
 - (IBAction)onInboxButtonTapped:(UIBarButtonItem *)sender {
 
+    self.messageButton.badgeValue = nil;
+
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Mail" bundle:nil];
     UIViewController *NavVC = [storyBoard instantiateViewControllerWithIdentifier:@"mailNavVC"];
     [self presentViewController:NavVC animated:YES completion:nil];
@@ -552,7 +562,48 @@
 
 
 }
+//retrieve messages count
 
+-(void)checkForNewMessages{
+    NSMutableArray *array = [NSMutableArray new];
+
+
+
+
+    PFQuery *query = [Alert query];
+
+    [query whereKey:@"recipientUsername" equalTo:[User currentUser].username];
+    [query whereKey:@"messageIsNew" equalTo:@1];
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
+
+        // NSLog(@"YOOOOOOOOOOOOOO, %@", objects);
+
+        if (!error) {
+            for (Alert *alert in objects) {
+
+
+
+                if (![array containsObject:alert.senderUsername] )  {
+                    [array addObject:alert];
+
+                }
+            }
+
+         NSLog(@"%lu runnningggg ", (unsigned long)array.count);
+
+
+            if ([array count] != 0) {
+
+
+
+                self.messageButton.badgeValue = [NSString stringWithFormat:@"%lu", (unsigned long)array.count];
+            }
+
+        }
+        
+    }];
+}
 
 #pragma mark - UITextView Delegate Methods
 

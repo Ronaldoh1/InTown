@@ -12,7 +12,7 @@
 #import "Message.h"
 #import "InboxVC.h"
 #import "AppDelegate.h"
-//#import "Alert.h"
+#import "Alert.h"
 @interface DialogVC ()<UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
@@ -45,7 +45,7 @@
     titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
     titleView.font = [UIFont fontWithName:@"Helvetica" size:20];
     titleView.text = @"Messages";
-    titleView.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1]; 
+    titleView.textColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1];
     [self.navigationItem setTitleView:titleView];
 
 
@@ -207,7 +207,7 @@
 
     [UIView animateWithDuration:0.5 animations:^{
         [self.view layoutIfNeeded];
-        self.heightConstraint.constant = 305;
+        self.heightConstraint.constant = 295;
         [self.view layoutIfNeeded];
 
     } completion:nil];
@@ -219,7 +219,7 @@
 
     [UIView animateWithDuration:0.5 animations:^{
         [self.view layoutIfNeeded];
-        self.heightConstraint.constant = 60;
+        self.heightConstraint.constant = 295;
         [self.view layoutIfNeeded];
 
     } completion:nil];
@@ -256,17 +256,17 @@
             self.messageTextField.enabled = YES;
             self.sendButton.enabled = YES;
 
-//            Alert *msgAlert = [Alert new];
-//
-//            msgAlert[@"messageIsNew"] = @1;
-//            msgAlert[@"recipientUsername"] = self.selectedRecipient.username;
-//            msgAlert[@"senderUsername"] = [User currentUser].username;
-//
-//            [msgAlert saveInBackground];
-//
-//
-//
-//
+            Alert *msgAlert = [Alert new];
+
+            msgAlert[@"messageIsNew"] = @1;
+            msgAlert[@"recipientUsername"] = self.selectedRecipient.username;
+            msgAlert[@"senderUsername"] = [User currentUser].username;
+
+            [msgAlert saveInBackground];
+
+
+
+
 
             [self retrieveMessages];
 

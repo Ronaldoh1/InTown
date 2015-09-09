@@ -1,28 +1,24 @@
 //
-//  Message.m
+//  Alerts.m
 //  NeuLynx
 //
-//  Created by Ronald Hernandez on 7/11/15.
+//  Created by Ronald Hernandez on 8/24/15.
 //  Copyright (c) 2015 NeuLynx. All rights reserved.
 //
 
-#import "Message.h"
+#import "Alert.h"
 
-@implementation Message
-@dynamic subject;
+@implementation Alert
+@dynamic recipient;
 @dynamic sender;
-@dynamic messageText;
 @dynamic recipientUsername;
 @dynamic senderUsername;
-@dynamic isNew;
-
+@dynamic messageIsNew;
 
 +(void)load {
     [self registerSubclass];
 }
 + (NSString *)parseClassName{
-    return @"Message";
+    return @"Alert";
 }
-
-
 @end

@@ -72,6 +72,7 @@
 		F23E93E11BA0131D00DCEDD8 /* AppIcon76x76~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F23E93D21BA0131D00DCEDD8 /* AppIcon76x76~ipad.png */; };
 		F23E93E61BA0203700DCEDD8 /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = F23E93E51BA0203700DCEDD8 /* Alert.m */; };
 		F23E93EC1BA0314600DCEDD8 /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = F23E93EB1BA0314600DCEDD8 /* UIBarButtonItem+Badge.m */; };
+		F23E93EE1BA0352D00DCEDD8 /* locationIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F23E93ED1BA0352D00DCEDD8 /* locationIcon.png */; };
 		F2BBF5FC1B9CFBE70010CB6D /* DialogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBF5FB1B9CFBE70010CB6D /* DialogVC.m */; };
 		F2BBF6081B9D20900010CB6D /* splashScreen1x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2BBF6051B9D20900010CB6D /* splashScreen1x.png */; };
 		F2BBF6091B9D20900010CB6D /* splashScreen2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2BBF6061B9D20900010CB6D /* splashScreen2x.png */; };
@@ -196,6 +197,7 @@
 		F23E93E51BA0203700DCEDD8 /* Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alert.m; sourceTree = "<group>"; };
 		F23E93EA1BA0314600DCEDD8 /* UIBarButtonItem+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Badge.h"; sourceTree = "<group>"; };
 		F23E93EB1BA0314600DCEDD8 /* UIBarButtonItem+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Badge.m"; sourceTree = "<group>"; };
+		F23E93ED1BA0352D00DCEDD8 /* locationIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locationIcon.png; sourceTree = "<group>"; };
 		F2BBF5FA1B9CFBE70010CB6D /* DialogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogVC.h; sourceTree = "<group>"; };
 		F2BBF5FB1B9CFBE70010CB6D /* DialogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialogVC.m; sourceTree = "<group>"; };
 		F2BBF6051B9D20900010CB6D /* splashScreen1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashScreen1x.png; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 		F20D974B1B9BFDA1007F50D4 /* Logos */ = {
 			isa = PBXGroup;
 			children = (
+				F23E93ED1BA0352D00DCEDD8 /* locationIcon.png */,
 				F20D974C1B9BFDD8007F50D4 /* cityOnlyLogo.png */,
 				F20D974D1B9BFDD8007F50D4 /* defaultImage.png */,
 				F20D974E1B9BFDD8007F50D4 /* IntownLogo.png */,
@@ -612,6 +615,7 @@
 				F20D97581B9C059C007F50D4 /* Welcome.storyboard in Resources */,
 				F2BBF6141B9D52EC0010CB6D /* Default@2x.png in Resources */,
 				F2BBF6131B9D52EC0010CB6D /* Default.png in Resources */,
+				F23E93EE1BA0352D00DCEDD8 /* locationIcon.png in Resources */,
 				F23E93D51BA0131D00DCEDD8 /* AppIcon29x29@2x~ipad.png in Resources */,
 				F23E93DB1BA0131D00DCEDD8 /* AppIcon40x40~ipad.png in Resources */,
 				F20D97511B9BFDD8007F50D4 /* IntownLogo.png in Resources */,

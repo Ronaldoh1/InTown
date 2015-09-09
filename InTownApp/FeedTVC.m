@@ -18,8 +18,7 @@
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "Alert.h"
-#import "GIBadgeView.h"
-#import "BBBadgeBarButtonItem.h"
+
 #import "UIBarButtonItem+Badge.h"
 
 @interface FeedTVC ()<CLLocationManagerDelegate>
@@ -320,6 +319,7 @@
     // Do your job, when done:
 
     [self downloadPosts];
+    [self checkForNewMessages];
     
     [refreshControl endRefreshing];
 }

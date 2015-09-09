@@ -87,7 +87,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miles Away" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k16-cK-xAo">
-                                            <rect key="frame" x="8" y="85" width="111" height="21"/>
+                                            <rect key="frame" x="25" y="85" width="111" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="111" id="3S8-k8-xL5"/>
                                                 <constraint firstAttribute="height" constant="21" id="ehw-H0-q3n"/>
@@ -106,20 +106,29 @@
                                             <color key="textColor" red="0.40000000000000002" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" red="0.40000000000000002" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="kgV-2Z-NSM">
+                                            <rect key="frame" x="9" y="88" width="13" height="13"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="13" id="gsy-MZ-h5B"/>
+                                                <constraint firstAttribute="width" constant="13" id="sA3-zX-9Jy"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="UeA-9p-Myf" firstAttribute="leading" secondItem="FCx-He-abu" secondAttribute="leadingMargin" constant="5" id="1AI-8q-GhW"/>
                                         <constraint firstItem="MZ2-mv-GDc" firstAttribute="top" secondItem="FCx-He-abu" secondAttribute="topMargin" constant="-8" id="2S4-DJ-qaz"/>
                                         <constraint firstItem="MZ2-mv-GDc" firstAttribute="leading" secondItem="FCx-He-abu" secondAttribute="leadingMargin" id="71K-9A-9Nv"/>
                                         <constraint firstItem="k16-cK-xAo" firstAttribute="top" secondItem="MZ2-mv-GDc" secondAttribute="bottom" constant="55" id="B5M-31-F1g"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="kgV-2Z-NSM" secondAttribute="bottom" constant="5" id="LT2-Dq-HWP"/>
                                         <constraint firstItem="rb7-35-jI7" firstAttribute="trailing" secondItem="FCx-He-abu" secondAttribute="trailingMargin" constant="5" id="OdM-SQ-fzG"/>
+                                        <constraint firstItem="kgV-2Z-NSM" firstAttribute="leading" secondItem="FCx-He-abu" secondAttribute="leadingMargin" constant="1" id="Sjx-Zl-mCC"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="MZ2-mv-GDc" secondAttribute="trailing" constant="170" id="W9C-oX-e6v"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="UeA-9p-Myf" secondAttribute="bottom" constant="14" id="YmZ-6r-vPl"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="mEl-cN-NZX" secondAttribute="trailing" constant="-6" id="b3S-MO-TJy"/>
                                         <constraint firstItem="mEl-cN-NZX" firstAttribute="bottom" secondItem="FCx-He-abu" secondAttribute="bottomMargin" constant="8" id="bC3-0B-uLj"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="MZ2-mv-GDc" secondAttribute="bottom" constant="76" id="e06-jg-uhu"/>
                                         <constraint firstItem="UeA-9p-Myf" firstAttribute="trailing" secondItem="FCx-He-abu" secondAttribute="trailingMargin" constant="-32" id="g39-yB-QNR"/>
-                                        <constraint firstItem="k16-cK-xAo" firstAttribute="leading" secondItem="FCx-He-abu" secondAttribute="leadingMargin" id="jfb-bn-MEe"/>
+                                        <constraint firstItem="k16-cK-xAo" firstAttribute="leading" secondItem="FCx-He-abu" secondAttribute="leadingMargin" constant="17" id="jfb-bn-MEe"/>
                                         <constraint firstItem="UeA-9p-Myf" firstAttribute="top" secondItem="FCx-He-abu" secondAttribute="topMargin" constant="19" id="qxP-T9-XvE"/>
                                         <constraint firstItem="k16-cK-xAo" firstAttribute="bottom" secondItem="FCx-He-abu" secondAttribute="bottomMargin" id="tVV-5M-hlk"/>
                                         <constraint firstItem="rb7-35-jI7" firstAttribute="top" secondItem="FCx-He-abu" secondAttribute="topMargin" id="xXG-4t-YwH"/>
@@ -177,6 +186,7 @@
     </scenes>
     <resources>
         <image name="inboxButton.png" width="60" height="50"/>
+        <image name="locationIcon.png" width="300" height="300"/>
     </resources>
     <color key="tintColor" red="1" green="0.36862745099999999" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -133,7 +133,15 @@
 
     }];
 
+    for (Alert *alert in self.alertArray) {
 
+
+        if ([sender.username isEqualToString:alert.senderUsername] && [alert.messageIsNew isEqualToNumber:@1]) {
+
+            cell.blueDot.alpha = 1.0;
+        }
+        
+    }
 
     //cell.detailTextLabel.text = @"You got a Message";
     return cell;
@@ -151,8 +159,7 @@
 
     User *sender = [User new];
     sender = (User *)self.inboxArray[indexPath.row];
-    Alert *selectedAlert = [Alert new];
-
+    
     for (Alert *alert in self.alertArray) {
 
 

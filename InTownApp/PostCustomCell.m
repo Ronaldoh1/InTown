@@ -12,6 +12,11 @@
 
 - (void)awakeFromNib {
     // Initialization code
+
+    self.userImage.layer.cornerRadius = self.userImage.frame.size.height/2;
+    self.userImage.layer.masksToBounds = YES;
+    self.userImage.layer.borderWidth = 4.0;
+    self.userImage.layer.borderColor = [UIColor colorWithRed:254.0/255.0 green:94/255.0 blue:1.0/255.0 alpha:1].CGColor;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

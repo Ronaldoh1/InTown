@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UILabel *postDate;
 @property (weak, nonatomic) IBOutlet UILabel *postDistanceFromCurrentUser;
+@property (weak, nonatomic) IBOutlet UIImageView *userImage;
 
 @end

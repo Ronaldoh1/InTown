@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "885A163CA84D47C3FE3CB6ED54271E71908C7EC5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "885A163CA84D47C3FE3CB6ED54271E71908C7EC5" : 0,
+    "BE1E5E1E110CF5944725F80BD091DCD28CB04482" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "ADD0CF93-FE66-43D0-A681-D883C0B36A3B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "885A163CA84D47C3FE3CB6ED54271E71908C7EC5" : "InTownApp",
+    "BE1E5E1E110CF5944725F80BD091DCD28CB04482" : "NeuLynx"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "InTownApp",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "InTownApp.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Ronaldoh1\/InTown.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "885A163CA84D47C3FE3CB6ED54271E71908C7EC5"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Ronaldoh1\/NeuLynx.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BE1E5E1E110CF5944725F80BD091DCD28CB04482"
+    }
+  ]
+}

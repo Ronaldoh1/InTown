@@ -344,7 +344,23 @@
 
     [self downloadPosts];
     [self checkForNewMessages];
-    
+
+
+
+
+
+        NSString *title = [NSString stringWithFormat:@"Pull down for latests posts"];
+        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
+                                                                    forKey:NSForegroundColorAttributeName];
+        NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+        refreshControl.attributedTitle = attributedTitle;
+
+       refreshControl.backgroundColor = [UIColor colorWithRed:254.0/255.0 green:94/255.0 blue:1.0/255.0 alpha:1];
+       refreshControl.tintColor = [UIColor whiteColor];
+
+
+
+
     [refreshControl endRefreshing];
 }
 -(void)downloadPosts{
@@ -557,6 +573,15 @@
 
 
     cell.postDate.text = [NSString stringWithFormat:@"%@ %@", theTime, theDate];
+
+    [tempPost.postOwner.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:data];
+
+            cell.userImage.image = image;
+        }
+
+    }];
 //    if ([((Post *)self.postsArray[indexPath.row]).LikerArray containsObject:[User currentUser]]){
 //        cell.likeButton.enabled = NO;
 //        cell.likeButton.alpha = 0.5;

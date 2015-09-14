@@ -64,6 +64,21 @@
                                             <color key="textColor" red="0.40000000000000002" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEl-cN-NZX">
+                                            <rect key="frame" x="278" y="170" width="34" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="14" id="Opx-WK-JiU"/>
+                                                <constraint firstAttribute="width" constant="34" id="aPF-4M-h3A"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <state key="normal" image="repostIcon.png">
+                                                <color key="titleColor" red="0.098470091819999994" green="0.74946486950000002" blue="0.014065644699999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="onRepostButtonTapped:" destination="f5H-YI-TpE" eventType="touchUpInside" id="luz-X1-4FM"/>
+                                            </connections>
+                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miles Away" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k16-cK-xAo">
                                             <rect key="frame" x="17" y="163" width="111" height="21"/>
                                             <constraints>
@@ -110,20 +125,14 @@
                                                 <action selector="onUsernameTapped:" destination="f5H-YI-TpE" eventType="touchUpInside" id="9Xu-TY-2fh"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEl-cN-NZX">
-                                            <rect key="frame" x="266" y="155" width="46" height="37"/>
+                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA4-74-y1m">
+                                            <rect key="frame" x="231" y="168" width="39" height="18"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="37" id="Opx-WK-JiU"/>
-                                                <constraint firstAttribute="width" constant="46" id="aPF-4M-h3A"/>
+                                                <constraint firstAttribute="width" constant="39" id="Ygp-Pd-8RK"/>
+                                                <constraint firstAttribute="height" constant="18" id="wOE-OG-TLi"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <state key="normal" title="Reply">
-                                                <color key="titleColor" red="0.098470091819999994" green="0.74946486950000002" blue="0.014065644699999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="onRepostButtonTapped:" destination="f5H-YI-TpE" eventType="touchUpInside" id="luz-X1-4FM"/>
-                                            </connections>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                            <state key="normal" title="Reply"/>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -133,6 +142,7 @@
                                         <constraint firstItem="sNJ-9S-auH" firstAttribute="leading" secondItem="FCx-He-abu" secondAttribute="leadingMargin" constant="-7" id="2iR-u4-Wc5"/>
                                         <constraint firstItem="k16-cK-xAo" firstAttribute="top" secondItem="FCx-He-abu" secondAttribute="topMargin" constant="155" id="2qx-8R-YnW"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="mEl-cN-NZX" secondAttribute="trailing" id="6Ml-hs-mmq"/>
+                                        <constraint firstItem="mEl-cN-NZX" firstAttribute="leading" secondItem="nA4-74-y1m" secondAttribute="trailing" constant="8" id="79f-ZQ-JBM"/>
                                         <constraint firstItem="UeA-9p-Myf" firstAttribute="top" secondItem="sNJ-9S-auH" secondAttribute="bottom" constant="8" id="9Nu-O0-jfh"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="MZ2-mv-GDc" secondAttribute="trailing" constant="118" id="Ayd-y1-ArK"/>
                                         <constraint firstItem="k16-cK-xAo" firstAttribute="leading" secondItem="kgV-2Z-NSM" secondAttribute="trailing" constant="3" id="ID5-RO-fkD"/>
@@ -141,7 +151,8 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="kgV-2Z-NSM" secondAttribute="bottom" constant="4" id="L2h-wM-4d1"/>
                                         <constraint firstItem="MZ2-mv-GDc" firstAttribute="top" secondItem="FCx-He-abu" secondAttribute="topMargin" id="LQK-vk-lYe"/>
                                         <constraint firstItem="MZ2-mv-GDc" firstAttribute="leading" secondItem="sNJ-9S-auH" secondAttribute="trailing" constant="9" id="Lhr-WQ-RZi"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="mEl-cN-NZX" secondAttribute="bottom" constant="-8" id="QFr-qO-0mt"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="mEl-cN-NZX" secondAttribute="bottom" id="QFr-qO-0mt"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="nA4-74-y1m" secondAttribute="bottom" constant="-2" id="eR1-ps-yoP"/>
                                         <constraint firstItem="sNJ-9S-auH" firstAttribute="top" secondItem="FCx-He-abu" secondAttribute="topMargin" constant="-6" id="eYL-3Y-yAr"/>
                                         <constraint firstItem="rb7-35-jI7" firstAttribute="leading" secondItem="sNJ-9S-auH" secondAttribute="trailing" constant="196" id="ifs-4Y-W9V"/>
                                         <constraint firstItem="sNJ-9S-auH" firstAttribute="leading" secondItem="FCx-He-abu" secondAttribute="leadingMargin" constant="-7" id="wd1-Uw-oqp"/>
@@ -203,6 +214,7 @@
         <image name="defaultImage.png" width="1200" height="1200"/>
         <image name="inboxButton.png" width="60" height="50"/>
         <image name="locationIcon.png" width="417" height="417"/>
+        <image name="repostIcon.png" width="263" height="192"/>
     </resources>
     <color key="tintColor" red="1" green="0.36862745099999999" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>

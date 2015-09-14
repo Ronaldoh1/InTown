@@ -51,8 +51,8 @@
 		F20D97C01B9CE99A007F50D4 /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F20D97BF1B9CE99A007F50D4 /* UserProfile.storyboard */; };
 		F20D97C31B9CF1AD007F50D4 /* chatIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F20D97C21B9CF1AD007F50D4 /* chatIcon.png */; };
 		F20D97C61B9CF43C007F50D4 /* UserDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F20D97C51B9CF43C007F50D4 /* UserDetailTVC.m */; };
-		F21EF0971BA6AE0B005575B5 /* locationIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F21EF0961BA6AE0B005575B5 /* locationIcon.png */; settings = {ASSET_TAGS = (); }; };
-		F21EF0991BA6AEA5005575B5 /* logoOutlines.png in Resources */ = {isa = PBXBuildFile; fileRef = F21EF0981BA6AEA5005575B5 /* logoOutlines.png */; settings = {ASSET_TAGS = (); }; };
+		F21EF0971BA6AE0B005575B5 /* locationIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F21EF0961BA6AE0B005575B5 /* locationIcon.png */; };
+		F21EF0991BA6AEA5005575B5 /* logoOutlines.png in Resources */ = {isa = PBXBuildFile; fileRef = F21EF0981BA6AEA5005575B5 /* logoOutlines.png */; };
 		F23E93B11B9FEC6B00DCEDD8 /* inboxButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F23E93B01B9FEC6B00DCEDD8 /* inboxButton.png */; };
 		F23E93D31BA0131D00DCEDD8 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = F23E93C41BA0131D00DCEDD8 /* AppIcon29x29.png */; };
 		F23E93D41BA0131D00DCEDD8 /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F23E93C51BA0131D00DCEDD8 /* AppIcon29x29@2x.png */; };
@@ -71,6 +71,7 @@
 		F23E93E11BA0131D00DCEDD8 /* AppIcon76x76~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F23E93D21BA0131D00DCEDD8 /* AppIcon76x76~ipad.png */; };
 		F23E93E61BA0203700DCEDD8 /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = F23E93E51BA0203700DCEDD8 /* Alert.m */; };
 		F23E93EC1BA0314600DCEDD8 /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = F23E93EB1BA0314600DCEDD8 /* UIBarButtonItem+Badge.m */; };
+		F24C9C0F1BA6D580001BCC61 /* repostIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F24C9C0E1BA6D580001BCC61 /* repostIcon.png */; };
 		F2BBF5FC1B9CFBE70010CB6D /* DialogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBF5FB1B9CFBE70010CB6D /* DialogVC.m */; };
 		F2BBF6081B9D20900010CB6D /* splashScreen1x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2BBF6051B9D20900010CB6D /* splashScreen1x.png */; };
 		F2BBF6091B9D20900010CB6D /* splashScreen2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2BBF6061B9D20900010CB6D /* splashScreen2x.png */; };
@@ -196,6 +197,7 @@
 		F23E93E51BA0203700DCEDD8 /* Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alert.m; sourceTree = "<group>"; };
 		F23E93EA1BA0314600DCEDD8 /* UIBarButtonItem+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Badge.h"; sourceTree = "<group>"; };
 		F23E93EB1BA0314600DCEDD8 /* UIBarButtonItem+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Badge.m"; sourceTree = "<group>"; };
+		F24C9C0E1BA6D580001BCC61 /* repostIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = repostIcon.png; sourceTree = "<group>"; };
 		F2BBF5FA1B9CFBE70010CB6D /* DialogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogVC.h; sourceTree = "<group>"; };
 		F2BBF5FB1B9CFBE70010CB6D /* DialogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialogVC.m; sourceTree = "<group>"; };
 		F2BBF6051B9D20900010CB6D /* splashScreen1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashScreen1x.png; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 		F20D973E1B9BFD1E007F50D4 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				F24C9C0E1BA6D580001BCC61 /* repostIcon.png */,
 				F20D97C21B9CF1AD007F50D4 /* chatIcon.png */,
 				F21EF0961BA6AE0B005575B5 /* locationIcon.png */,
 				F23E93B01B9FEC6B00DCEDD8 /* inboxButton.png */,
@@ -613,6 +616,7 @@
 				F20D97751B9C3201007F50D4 /* Profile.storyboard in Resources */,
 				F20D97581B9C059C007F50D4 /* Welcome.storyboard in Resources */,
 				F2BBF6141B9D52EC0010CB6D /* Default@2x.png in Resources */,
+				F24C9C0F1BA6D580001BCC61 /* repostIcon.png in Resources */,
 				F2CD6FFA1BA110D500061C86 /* twitterLoginButton.png in Resources */,
 				F2BBF6131B9D52EC0010CB6D /* Default.png in Resources */,
 				F21EF0971BA6AE0B005575B5 /* locationIcon.png in Resources */,
